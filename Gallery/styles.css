@@ -1,0 +1,271 @@
+/* Punya Cicil */
+/* Light-mode */
+:root{
+    --h1color: white;
+    --h3color: #333;
+    --h10color: #333;
+    --pcolor: #333;
+    --container: #fafafa;
+    --background: linear-gradient(0.25turn,#e5f8fb,#2596be);
+    --checklist: powderblue;
+    --textshadow: #36B1EB;
+    --clicker: powderblue;
+    --ball: white;
+    --switchpos: 30%;
+}
+
+/* Dark-mode */
+.dark{
+    --h1color: white;
+    --h3color: white;
+    --h10color: white;
+    --pcolor: white;
+    --container: #1f2937;
+    --background: linear-gradient(0.25turn, #0f141c, #2A525C);
+    --checklist: teal;
+    --textshadow: #56A8BA;
+    --clicker: #2176ff;
+    --ball: white;
+    --switchpos: 70%;
+}
+
+/* Hapus default margin, padding, dan box-sizing*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Seperti div tetapi ia untuk style kata */
+span {
+     color: var(--pcolor);
+     font-size: 15pt;
+     display: inline-block;
+     vertical-align: middle;
+     text-align: center;
+     line-height: 0;
+     height: 30px;
+     padding: 5px;
+
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: var(--background);
+    height: 210vh; /* Pastikan halaman mengisi seluruh tinggi layar */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertikal center */
+    align-items: center; /* Horizontal center */
+    transition: 0.2s;    /*untuk smooth transition, dibawahnya untuk browser lain*/ 
+    -webkit-transition: 0.2s;      
+    -moz-transition: 0.2s;
+    -ms-transition: 0.2s;
+    -o-transition: 0.2s;
+}
+
+.header h1{
+    color: var(--h1color);
+}
+
+
+/* The slider */
+input{
+    -webkit-appearance: none;
+    position: relative;
+    width:50px;
+    border-radius: 25px;
+    height: 30px;
+    border: 25px;
+    background-color: var(--clicker); /*warna mengikuti variabel saat dia light/darkmode*/
+    outline: none;
+    cursor: pointer;
+}
+
+input:after{
+    content: '';
+    position:absolute;
+    top:50%;
+    left: var(--switchpos);
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    height: 1.25rem;
+    width: 1.25rem;
+    background-color: var(--ball);/*warna mengikuti variabel saat dia light/darkmode*/
+    transition: 0.1s;
+}
+
+input:checked{
+    background-color: var(--checklist);
+}
+
+input:checked:after{
+    left: var(--switchpos);
+    transition: 0.1s;
+}
+
+.switch{
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+
+
+h1 {
+    text-shadow: 0 0 0.3em var(--textshadow);/*warna mengikuti variabel saat dia light/darkmode*/
+    color: var(--h1color);/*warna mengikuti variabel saat dia light/darkmode*/
+    transition: 0.3s;
+}
+.header {
+    display: flex;
+    position:sticky;
+    justify-content: center;
+    text-align: center;
+    align-items: center; /*Posisikan item di tengah secara vertikal */
+    text-shadow: -3px 0 0 rgba( 211 ,211 ,211 , 1.0 ); /*menambahkan efek bayangan pada tuisan judul*/
+    margin-bottom: 10px;
+}
+
+
+.Logo {
+    width: 80px; /* Atur lebar sesuai kebutuhan, misalnya 100px */
+    height: auto; /* Biarkan tinggi menyesuaikan secara proporsional */
+    object-fit: contain; /* Pastikan proporsi logo tetap terjaga */
+    margin-right: 15px; /* Memberi jarak antara logo dan judul */
+    margin-bottom: 0, auto;
+}
+
+
+.teacher {
+    width: 798px;
+    height: 325px;
+    display: flex;
+    border-radius: 20px;
+    background-color: var(--container);
+    box-shadow: 0 0px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s ease-in-out;
+    margin-top: 2px;
+    box-shadow: 0 2px 10px var(--textshadow),/*efek neon*/
+                0 0 10px var(--textshadow); /*efek neon*/
+    backdrop-filter: blur(8px);
+    display: flex;
+    flex-direction: column; /* Menyusun elemen di dalam container secara vertikal */
+    align-items: center; /* Memastikan elemen sejajar di tengah secara horizontal */
+    transition: 0.3s;
+
+}
+
+.group {
+    display: flex; /* Tampilkan elemen dalam grup secara horizontal */
+    gap: 15px; /* Jarak antar profil dalam grup */
+    justify-content: center; /* Pusatkan setiap grup */
+    flex-wrap: wrap; /* Jika terlalu panjang, profil akan turun ke baris berikutnya */
+}
+
+.group-container {
+    display: flex;
+    flex-direction: column; /* Setiap grup ditampilkan vertikal */
+    gap: 15px; /* Jarak antar grup */
+    width: 100%;
+}
+
+.profile-container {
+    display: none; /* Jika menggunakan grup, sembunyikan profil sebelumnya */
+}
+
+/* Profil Developer */
+
+
+.teacher-photo img {
+    width: 798px;
+    height: 225px; /* Ukuran tetap untuk gambar */
+    object-fit: cover; /* Menjaga agar gambar tidak terdistorsi dan tetap proporsional */
+    border-radius top: 20px; /* Untuk efek sudut melengkung */
+    margin-bottom: 15px;
+    border-top-left-radius: 20px; /* Melengkung hanya di bagian atas */
+    border-top-right-radius: 20px; /* Melengkung hanya di bagian atas */
+    text-align: center;
+    transition: 0.3s;
+}
+.profile {
+    padding: 0px;
+    width: 255px;
+    border-radius: 10px;
+    background-color: var(--container);
+    transition: transform 0.3s ease-in-out;
+    margin-top: 2px;
+    box-shadow: 0 2px 10px var(--textshadow),/*efek neon*/
+                0 0 10px var(--textshadow); /*efek neon*/
+    backdrop-filter: blur(8px);
+    display: flex;
+    flex-direction: column; /* Menyusun elemen di dalam container secara vertikal */
+    transition: 0.3s;
+}
+
+/* Gaya gambar profil */
+.profile img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover; /* Menjaga agar gambar tidak terdistorsi dan tetap proporsional */
+    object-position: center;
+    border-radius top: 10px; /* Untuk efek sudut melengkung */
+    margin-bottom: 14px;
+    border-top-left-radius: 10px; /* Melengkung hanya di bagian atas */
+    border-top-right-radius: 10px; /* Melengkung hanya di bagian atas */
+}
+
+.teacher-photo h3 {
+    margin: 0px 0 5px;
+    color: var(--h3color);
+    transition: 0.3s;
+}
+
+.teacher-photo p {
+    margin: 0px 0 5px;
+    color: var(--pcolor);
+}
+
+/* Nama developer */
+.profile h3 {
+    text-align: justify;
+    left: 10px;
+    font-size: 16px;
+    color: var(--h3color);
+    margin: 3px 0 2.5px;
+    transition: 0.3s;
+}
+
+/* Jabatan */
+.profile p {
+    max-width: 230px;
+    text-align: justify;
+    font-size: 14px;
+    color: var(--pcolor);
+    margin: 5px 0 5px;
+    transition: 0.3s;
+}
+
+.profile h10 {
+    font-size: 14px;
+    color: var(--h10color);
+    margin: 5px 0 5px;
+    max-width: 240px;
+    transition: 0.3s;
+}
+
+/* Mengubah tata letak untuk responsif di perangkat kecil */
+@media (max-width: 768px) {
+    .profile-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 kolom di perangkat kecil */
+         justify-items: center; /* Tetap di tengah */
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-container {
+        grid-template-columns: 1fr; /* 1 kolom di perangkat sangat kecil */
+        justify-items: center; /* Tetap di tengah */
+    }
+
+

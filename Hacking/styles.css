@@ -1,0 +1,185 @@
+/*Dikerjakan oleh Gaby*/
+
+/*Warna-Warna untuk Light Mode*/
+:root{
+	--basecolor: #e6e6e6;
+	--headercolor: #5100ff;
+	--footercolor: #5100ff;
+	--h1color: white;
+	--h2color: #5100ff;
+	--h3color: black;
+	--buttoncolor: white;
+	--buttontext: #5100ff;
+	--hovercolor: #e6e6e6;
+	--textcolor: black;
+	--containercolor: white;
+	--footertext: white;
+	--shadow: 0 5px 15px rgba(72, 72, 72, 0.3);
+}
+
+/*Warna-Warna untuk Dark Mode*/
+.dark{
+	--basecolor:#171717;
+	--headercolor: #242424;
+	--footercolor: #242424;
+	--h2color: #7539f7;
+	--h1color: white;
+	--h3color: white;
+	--buttoncolor: #2e2e2e;
+	--buttontext: white;
+	--hovercolor: #212121;
+	--textcolor: white;
+	--containercolor: #2e2e2e;
+	--footertext: white;
+	--shadow: 0 5px 25px rgba(255, 255, 255, 0.5);
+}
+
+body{
+	transition: background-color 0.2s, color 0.2s; /*Transisi warna light mode dan darkmode*/
+	background-color: var(--basecolor); /*Warna background halaman*/
+	margin: 0; /*Reset Margin halaman bagian 'Body'*/
+	padding: 0; /*Reset Padding halaman bagian 'Body'*/
+	height: 100%; /*Memastikan halaman full screen tingginya*/
+}
+
+
+.Top{
+	display: inline-block; /*Membuat barang di dalam div untuk didisplay secara horizontal*/
+	align-items: center; /*Membuat elemen di dalam div menjadi di tengah*/
+	align-content: center; /*Membuat elemen di dalam div menjadi di tengah*/
+	text-align: center; /*Membuat tulisan di dalam div menjadi di tengah*/
+	margin: auto; /*Membuat margin div otomatis*/
+}
+
+.Top img{
+	max-width: 50px; /*Menetapkan ukuran maksimal lebar gambar*/
+	margin: 10px; /*Menetapkan letak gambar relatif pada elemen di sekitarnya*/
+	float: left; /*Membuat gambar float dari kiri*/
+}
+
+.Top h1{
+	float: left; /*Membuat gambar float dari kiri*/
+	color: var(--h1color); /*Warna tulisan h1*/
+	text-align: center; /*Membuat tulisan center*/
+	font-weight: bold; /*Membuat bold tulisan h1*/
+	font-family: sans-serif; /*Menentukan font tulisan h1*/
+}
+
+h2{
+	color: var(--h2color); /*Warna tulisan h2*/
+	font-family: sans-serif; /*Menentukan font tulisan h2*/
+	font-size: 20pt; /*Menentukan ukuran tulisan*/
+	font-weight: bold; /*Membuat bold tulisan h2*/
+}
+
+h3{
+	color: var(--h3color); /*Warna tulisan h3*/
+	font-family: sans-serif; /*Menentukan font tulisan h3*/
+	font-size: 15pt; /*Menentukan ukuran tulisan*/
+	font-weight: bold; /*Membuat bold tulisan h3*/
+}
+
+header{
+	transition: background-color 0.2s, color 0.2s; /*Menetapkan transisi untuk warna background bagian header*/
+	background-color: var(--headercolor); /*Warna background header*/
+	min-width: 100%; /*Menetapkan panjang header selalu memenuhi screen*/
+	top: 0; /*Menentukan margin antara header dan bagian atas halaman*/
+	align-content: center; /*Menengahkan semua konten dalam header*/
+	text-align: center; /*Menengahkan semua konten dalam header*/
+	padding: 10px; /*Menentukan padding dalam header*/
+	align-items: center; /*Menengahkan semua konten dalam header*/
+	display: block; /*Membuat display header menjadi block*/
+	position: fixed; /*Membuat header selalu berada di halaman walaupun di scroll*/
+	z-index: 10; /*Header selalu di paling atas*/
+}
+
+button{
+	transition: background-color 0.2s, color 0.2s; /*Menetapkan transisi untuk warna background bagian tombol*/
+	color: var(--buttontext); /*Warna tulisan dalam tombol*/
+	font-weight: bold; /*Membuat tulisan tombol menjadi bold*/
+	font-family: sans-serif; /*Menentukan font tulisan tombol*/
+	border: none; /*Menghilangkan border tombol*/
+	background-color: var(--buttoncolor); /*Warna background tombol*/
+	border-radius: 30px; /*Membuat sudut tombol melengkung*/
+	height: 35px; /*Menentukan tinggi tombol*/
+	padding-right: 15px; /*Menentukan padding utuk tulisan dalam tombol*/
+	padding-left: 15px; /*Menentukan padding utuk tulisan dalam tombol*/
+}
+
+button:hover{
+	transition: ease 0.5s; /*Menetapkan transisi untuk warna background bagian tombol saat di hover*/
+	background-color: var(--hovercolor); /*Warna background tombol saat di hover*/
+	cursor: pointer; /*Mengubah cursor menjadi pointer saat hover di atas tombol*/
+}
+
+#darkmode{
+	font-size: 11pt; /*Menentukan ukuran gambar dalam tombol darkmode*/
+}
+
+footer{
+	background-color: var(--footercolor); /*Warna background footer*/
+	min-width: 100%; /*Menetapkan panjang footer selalu memenuhi screen*/
+	bottom: 0; /*Menetapkan jarak footer dan bagian bawah halaman*/
+	margin-top: 100px; /*Menetapkan jarak footer dan container*/
+	align-content: center; /*Menengahkan semua konten dalam footer*/
+	text-align: center; /*Menengahkan semua konten dalam footer*/ /*Menengahkan semua konten dalam footer*/
+	align-items: center; /*Menengahkan semua konten dalam footer*/
+	position: relative; /*Membuat footer bisa menghilang saat scroll ke atas*/
+}
+
+.bottom p{
+	color: var(--footertext); /*Warna tulisan footer*/
+	font-family: sans-serif; /*Font tulisan footer*/
+}
+
+
+p, li{
+	font-family: sans-serif; /*Font tulisan untuk elemen p dan li*/
+	color: var(--textcolor); /*Warna tulisan untuk elemen p dan li*/
+	font-size: 11pt; /*Ukuran tulisan untuk elemen p dan li*/
+	line-height: 1.5em; /*Jarak antar baris untuk elemen p dan li*/
+}
+
+li{
+	font-weight: bold; /*Tulisan li selalu bold*/
+}
+
+#Penyebab li{
+	font-weight: normal; /*Tulisan li khusus pada div bagian Penyebab tidak bold*/
+}
+
+#Hacking{
+	background-color: var(--containercolor); /*Warna background container*/
+	border-radius: 10px; /*Membuat sudut container melengkung*/
+	max-width: 50%; /*Menentukan ukuran container dalam halaman*/
+	margin: auto; /*Menentukan margin container*/
+	padding: 35px; /*Menentukan jarak antara tulisan dan sisi container*/
+	margin-top: 180px; /*Menentukan jarak antara container dan header*/
+	box-shadow: var(--shadow); /*Warna bayangan container*/
+}
+
+#UU{
+	display: none;
+	background-color: var(--containercolor); /*Warna background container*/
+	border-radius: 10px; /*Membuat sudut container melengkung*/
+	max-width: 50%; /*Menentukan ukuran container dalam halaman*/
+	margin: auto; /*Menentukan margin container*/
+	padding: 35px; /*Menentukan jarak antara tulisan dan sisi container*/
+	margin-top: 180px; /*Menentukan jarak antara container dan header*/
+	box-shadow: var(--shadow); /*Warna bayangan container*/
+}
+
+#Kasus{
+	display: none;
+	background-color: var(--containercolor); /*Warna background container*/
+	border-radius: 10px; /*Membuat sudut container melengkung*/
+	max-width: 50%; /*Menentukan ukuran container dalam halaman*/
+	margin: auto; /*Menentukan margin container*/
+	padding: 35px; /*Menentukan jarak antara tulisan dan sisi container*/
+	margin-top: 180px; /*Menentukan jarak antara container dan header*/
+	box-shadow: var(--shadow); /*Warna bayangan container*/
+}
+
+#Sumber li{
+	font-weight: normal; /*Tulisan li khusus pada div bagian Sumber tidak bold*/
+}

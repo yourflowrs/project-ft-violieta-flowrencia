@@ -1,0 +1,71 @@
+body {
+        display: flex;
+        justify-content: center; /*konten ke tengah atas*/
+        align-items: center; /*konten ke tengah*/
+        background : linear-gradient(to right, lightskyblue, lightblue, aquamarine, cyan);
+      }
+.container {
+        text-align: center; /*teks tombol ke tengah*/
+        background-color: rgba(255, 255, 255, 0.6); /*warna tengah(foto)*/
+        margin-top: 50px;
+        margin-bottom: 50px; /*bisa di scroll naik atau turun*/
+        border-radius: 10px; /*kelancipan di ujung border*/
+        padding: 15px; /*border seperti lebih besar*/
+        font-family: cursive;
+      }
+
+.logo{
+        width: 65px; /*ukuran logo Laurensia*/
+        height: auto;
+        margin : 0
+}
+
+video {
+        border: 5px solid white; /*membuat garis putih*/
+        width: 640px;
+        height: 480px;
+      }
+
+.controls {
+        margin-top: 10px; /*jarak tombol dengan kotak*/
+      }
+
+.controls input {
+        padding: 5px; /*kelancipan kotak timer*/
+        width: 100px; /*panjang kotak timer*/
+        background: lightgrey;
+        font-family: cursive;
+      }
+
+.controls button {
+        padding: 10px 20px; /*kelancipan kotak capture*/
+        cursor: pointer; /*tombol cursor saat diarahkan ke capture*/
+        background:darkgreen; 
+        font-family: cursive;
+        color: white;
+      }
+
+#photos {
+        display: flex; 
+        flex-wrap: wrap; /*setelah ambil foto, berurutan dari kiri ke kanan*/
+        margin-top: 20px;
+      }
+
+.photo {
+        margin: 10px;
+        position: relative; /*tombol download setiap ambil foto*/
+      }
+
+.photo img {
+        width: 160px;
+        height: 120px;
+        border: 2px solid #0F52BA; /*warna border setiap ambil foto*/
+      }
+
+.photo button {
+        position: absolute; /*arah tombol download*/
+        bottom: 5px; /*arah tombol download*/
+        left: 27.5%; /*arah tombol download*/
+        padding: 5px;
+        cursor: pointer;
+      }

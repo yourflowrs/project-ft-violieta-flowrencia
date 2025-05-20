@@ -1,0 +1,127 @@
+:root{
+	--basecolor: white;
+	--background: linear-gradient(to bottom, #8cb4ff 0%, #ffffff 100%);
+	--buttoncolor: #266bff;
+	--buttontext: white;
+	--h1color:#333333;
+	--hovercolor: #0041cc;
+	--switchcolor: #ccc;
+	--switchcolor2: white;
+	--textcolor: black;
+	--switchpos: 30%;
+}
+
+.dark{
+	--basecolor: #1d2733;
+	--background: linear-gradient(to bottom, #10244a 0%, #050d1c 100%);
+	--buttoncolor: #012c87;
+	--buttontext: white;
+	--h1color:#ffffff;
+	--hovercolor: #2952ab;
+	--switchcolor: #2176ff;
+	--textcolor: white;
+	--switchpos: 70%;
+}
+
+input{
+	-webkit-appearance: none;
+	position: relative;
+	width: 50px;
+	height: 30px;
+	border-radius: 25px;
+	background-color: var(--switchcolor);
+	outline: none;
+	cursor: pointer;
+}
+
+input:after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: var(--switchpos);
+	transform: translate(-50%, -50%);
+	border-radius: 50%;
+	height: 1.25rem;
+	width: 1.25rem;
+	transition: 0.1s;
+	background-color: var(--switchcolor2);
+}
+
+input:checked{
+	background-color: var(--switchcolor);
+}
+
+input:checked:after{
+	left: var(--switchpos);
+}
+
+.switch{
+	position: fixed;
+	top: 10px;
+	right: 10px;
+}
+
+body{
+	background: var(--background);
+	background-attachment: fixed;
+	font-family: sans-serif;
+}
+
+.swal2-popup{
+	font-family: sans-serif;
+}
+
+.container{
+	background-color: var(--basecolor);
+	transition: 0.3s;
+	border-radius: 10px;
+	max-width: 25%;
+	margin: auto;
+	padding: 20px;
+	margin-top: 180px;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.container button{
+	min-width: 28%;
+	transition: 0.3s;
+	margin: 5px;
+	height: 40px;
+	border: none;
+	background-color: var(--buttoncolor);
+	color: var(--buttontext);
+	border-radius: 5px;
+}
+
+.container button:hover{
+	transition: ease 0.5s;
+	background-color: var(--hovercolor);
+	cursor: pointer;
+}
+
+img{
+	max-width: 20%;
+}
+
+h1{
+	color: var(--h1color);
+	transition: 0.3s;
+}
+
+label{
+	color: var(--textcolor);
+	position: relative;
+}
+
+span{
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	line-height: 0;
+	height: 25px;
+	padding: 5px;
+}
